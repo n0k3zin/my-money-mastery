@@ -1,73 +1,74 @@
-# Welcome to your Lovable project
+# My Money Mastery 💰
 
-## Project info
+Um aplicativo moderno e intuitivo para gestão financeira pessoal. Controle suas receitas, despesas e visualize para onde seu dinheiro está indo através de um dashboard interativo.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## 🚀 Tecnologias Utilizadas
 
-## How can I edit this code?
+Este projeto foi desenvolvido com as tecnologias mais recentes do ecossistema React:
 
-There are several ways of editing your application.
+- **[Vite](https://vitejs.dev/)** - Build tool ultrarrápida
+- **[React](https://reactjs.org/)** - Biblioteca para interfaces de usuário
+- **[TypeScript](https://www.typescriptlang.org/)** - Tipagem estática para JavaScript
+- **[Supabase](https://supabase.com/)** - Backend as a Service (Auth & Database)
+- **[Tailwind CSS](https://tailwindcss.com/)** - Framework de CSS utilitário
+- **[shadcn/ui](https://ui.shadcn.com/)** - Componentes de interface reutilizáveis
+- **[TanStack Query](https://tanstack.com/query/latest)** - Gerenciamento de estado assíncrono
 
-**Use Lovable**
+## ✨ Funcionalidades
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+- **Dashboard Financeiro**: Visão geral de saldo, receitas e despesas.
+- **Autenticação Segura**: Login e registro via Supabase Auth.
+- **Gestão de Transações**: Adicione, edite e remova gastos e ganhos.
+- **Segurança de Dados**: Regras de segurança (RLS) garantem que cada usuário veja apenas seus dados.
+- **Design Responsivo**: Funciona perfeitamente em computadores e celulares.
+- **Dark/Light Mode**: Interface adaptável.
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🛠️ Como rodar o projeto localmente
 
-**Use your preferred IDE**
+Siga os passos abaixo para executar o projeto na sua máquina:
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Pré-requisitos
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Certifique-se de ter o [Node.js](https://nodejs.org/) instalado (versão 18 ou superior).
 
-Follow these steps:
+### Instalação
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+1. Clone o repositório:
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+    git clone [https://github.com/n0k3zin/my-money-mastery.git](https://github.com/n0k3zin/my-money-mastery.git)
 
-# Step 3: Install the necessary dependencies.
-npm i
+2. Entre na pasta do projeto:
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+    cd my-money-mastery
 
-**Edit a file directly in GitHub**
+3. Instale as dependências:
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+    npm install
 
-**Use GitHub Codespaces**
+### Configuração das Variáveis de Ambiente
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Crie um arquivo `.env` na raiz do projeto e adicione suas chaves do Supabase:
 
-## What technologies are used for this project?
+    VITE_SUPABASE_URL=sua_url_do_supabase
+    VITE_SUPABASE_ANON_KEY=sua_chave_anonima_publica
 
-This project is built with:
+### Rodando o Servidor
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Inicie o servidor de desenvolvimento:
 
-## How can I deploy this project?
+    npm run dev
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+O projeto estará disponível em `http://localhost:8080` (ou a porta indicada no terminal).
 
-## Can I connect a custom domain to my Lovable project?
+## 📦 Deploy
 
-Yes, you can!
+Este projeto está configurado para deploy automático no **GitHub Pages** utilizando GitHub Actions.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Para realizar um novo deploy:
+1. Faça suas alterações.
+2. Realize o Commit e Push para a branch `main`.
+3. O GitHub Actions iniciará automaticamente o processo de build e deploy.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## 📄 Licença
+
+Este projeto é de uso pessoal e educacional.
