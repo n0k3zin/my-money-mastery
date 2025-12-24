@@ -61,23 +61,25 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     return { error: error as Error | null };
   };
 
-const signOut = async () => {
-    try {
-      // 1. Desconecta do Supabase
-      await supabase.auth.signOut();
-      
-      // 2. Limpa os estados locais imediatamente (para feedback visual rápido)
-      setUser(null);
-      setSession(null);
+  // 👇 AQUI ESTÁ A CORREÇÃO DO LOGOUT
+  const signOut = async () => {
+    try {
+      await supabase.auth.signOut();
+      setUser(null);
+      setSession(null);
+      // Força o redirecionamento via HashRouter
+      window.location.hash = "/auth";
+    } catch (error) {
+      console.error("Erro ao fazer logout:", error);
+    }
+  };
 
-      // 3. FORÇA o navegador a ir para a tela de login
-      // Como estamos usando HashRouter, mudamos o "hash" da URL
-      window.location.hash = "/auth";
-      
-    } catch (error) {
-      console.error("Erro ao fazer logout:", error);
-    }
-  };
+  return (
+    <AuthContext.Provider value={{ user, session, loading, signUp, signIn, signOut }}>
+      {children}
+    </AuthContext.Provider>
+  );
+} // <--- ESSA CHAVE AQUI TINHA SIDO APAGADA
 
 export function useAuth() {
   const context = useContext(AuthContext);
