@@ -2,7 +2,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-// 👇 Mudei de BrowserRouter para HashRouter aqui:
+// 👇 IMPORTANTE: Usando HashRouter
 import { HashRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "@/hooks/useAuth";
 import ProtectedRoute from "@/components/ProtectedRoute";
@@ -19,7 +19,7 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        {/* 👇 Use HashRouter sem nenhuma configuração extra */}
+        {/* 👇 HashRouter SEM a propriedade basename */}
         <HashRouter>
           <Routes>
             <Route path="/" element={<Landing />} />
@@ -32,6 +32,7 @@ const App = () => (
                 </ProtectedRoute>
               } 
             />
+            {/* Rota de Catch-all para 404 */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </HashRouter>
