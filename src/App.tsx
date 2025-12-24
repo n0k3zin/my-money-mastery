@@ -18,7 +18,8 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter>
+        {/* 👇 A MUDANÇA ESTÁ AQUI. Adicione o basename: */}
+        <BrowserRouter basename="/my-money-mastery">
           <Routes>
             <Route path="/" element={<Landing />} />
             <Route path="/auth" element={<Auth />} />
